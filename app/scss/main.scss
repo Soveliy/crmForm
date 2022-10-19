@@ -189,22 +189,32 @@ img{
       border-radius: 50%;
       position: relative;
       overflow: hidden;
+      &[data-add-employee]{
+        width: 37px;
+        height: 37px;
+        &:hover{
+          &:before{
+            border-width: 20px;
+          }
+        }
+      }
       &[data-add-role]{
         margin: 15px auto 0;
       }
+      
       &:before{
         content: '';
         background-color: transparent;
         border-radius: 50%;
-        border:1px solid #2fc6f6;
-        height: 20px;
+        border:1px solid transparent;
+        height: 100%;
         position: absolute;
-        width: 20px;
+        width: 100%;
         box-sizing: border-box;
         transition: border-width .15s linear;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
       }
       &::after{
         background: url(../images/template_sprite.png?10) no-repeat 100px 100px;
@@ -223,6 +233,7 @@ img{
         }
         &:before{
           border-width: 9px;
+          border-color: #2fc6f6;
         }
       }
      
