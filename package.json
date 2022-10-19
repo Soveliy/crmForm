@@ -1,0 +1,38 @@
+{
+    "name": "gulp-start",
+    "version": "1.0.0",
+    "description": "start gulp",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nikita Elagin",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.5",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-cheerio": "^1.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-rigger": "^0.5.8",
+        "gulp-sass": "^4.0.2",
+        "gulp-svg-sprite": "^1.5.0",
+        "gulp-svgmin": "^2.2.0",
+        "gulp-uglify": "^3.0.2",
+        "normalize.css": "^8.0.1"
+    },
+    "dependencies": {
+        "@fancyapps/fancybox": "^3.5.7",
+        "@fancyapps/ui": "^4.0.0",
+        "fast-average-color": "^7.1.0",
+        "jquery-nice-select": "^1.1.0",
+        "nouislider": "^15.5.1",
+        "overlayscrollbars": "^2.0.0-beta.1",
+        "slick-carousel": "^1.8.1",
+        "swiper": "^8.0.6"
+    }
+}

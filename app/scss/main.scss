@@ -1,0 +1,283 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+$dark-pink:#0D1526;
+$inputs-color:#132039;
+$light-blue:#9FB5DF;
+$dark-blue:#192B4D;
+$grey:#808080;
+$red:#FF0040;
+$red-light:#FF3366;
+$redHover:#E50039;
+$navcolor:#14181F;
+$pagcolor:#868A92;
+$mainbg:#F0F1F5;
+$green:#00B268;
+$greennav:#00B377;
+.wrapper select{
+  display: none;
+}
+html{
+    height: 100%;
+    margin: 0;
+}
+*{
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+  .os-scrollbar-handle{
+    cursor: pointer;
+  }
+  touch-action: manipulation;
+  overflow: visible !important;
+    height: 100%;
+    font-family: 'Segoe UI';
+    margin: 0;
+    color: #14181F;
+    font-size: 14px;
+    line-height: 17px;
+    transform: none !important;
+
+    @include for-md(){
+      overflow: visible !important;
+    }
+    &.js-review-hidden{
+      position: relative;
+      overflow: hidden !important;
+      margin-right:8px !important;
+      @include for-md(){
+        overflow: visible !important;
+      }
+    }
+}
+input{
+  appearance: none;
+  outline: none;
+  border: none;
+}
+table{
+  border-spacing: 0;
+}
+button:active, button:focus {
+  outline: none !important;
+}
+select.select{
+  display:none;
+}
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus
+{
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+a{
+  color: $red-light;
+  text-decoration: none;
+  transition: .3s;
+  &:hover{
+    color: $redHover;
+  }
+}
+img{
+    max-width:100%
+}
+.crmForm{
+  height:100vh;
+  border: 1px solid #c6cdd3;
+  box-sizing: border-box;
+  &-item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__footer{
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      border-top: 1px solid #c6cdd3;
+    }
+    &__head{
+      padding: 25px;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #c6cdd3;
+      flex-shrink: 0;
+    }
+    &__input{
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border: 1px solid #c6cdd3;
+      width: 100%;
+    }
+    &__textarea{
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border: 1px solid #c6cdd3;
+      width: 100%;
+    }
+    &__input-container{
+      width: 100%;
+      padding: 10px 55px 0 25px;
+      box-sizing: border-box;
+      position: relative;
+
+      &:hover{
+        .crmForm-item__input-remove{
+          opacity: 1;
+        }
+      }
+    }
+    &__input-container +  &__input-container{
+      margin-top: 10px;
+    }
+    &__input-remove{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-weight: 700;
+      font-size: 0;
+      height: 22px;
+      width: 22px;
+      background: url(../images/close.svg) no-repeat center center;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      cursor: pointer;
+      opacity: 0;
+      border-radius: 50%;
+      transition: .15s;
+      &:hover{
+        border-color: #f1361a;
+      }
+      
+    }
+    &__body{
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+    &__added-role{
+      font-size: 0;
+      width: 20px;
+      height: 20px;
+      border:1px solid #2fc6f6;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      &[data-add-role]{
+        margin: 15px auto 0;
+      }
+      &:before{
+        content: '';
+        background-color: transparent;
+        border-radius: 50%;
+        border:1px solid #2fc6f6;
+        height: 20px;
+        position: absolute;
+        width: 20px;
+        box-sizing: border-box;
+        transition: border-width .15s linear;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::after{
+        background: url(../images/template_sprite.png?10) no-repeat 100px 100px;
+        background-position: -144px -197px;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 12px;
+        position: absolute;
+        width: 12px;
+      }
+      &:hover{
+        &::after{
+          background-position: -115px -197px;
+        }
+        &:before{
+          border-width: 9px;
+        }
+      }
+     
+    }
+  }
+  &__row{
+    display: flex;
+    height: 100%;
+    &--around{
+      justify-content: space-around;
+    }
+  }
+ 
+  &__item-container{
+    width: 50%;
+    box-sizing: border-box;
+    & + &{
+      .crmForm-item__head,.crmForm-item__body{
+        border-left: 1px solid #c6cdd3;
+      }
+     
+    }
+  }
+
+  &__button{
+    padding: 10px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    &--save{
+      background-color: #bbed21;
+      color: #535c69;
+      &:hover{
+        background-color: #d2f95f;
+      }
+      &:active{
+        background-color: #b2e232;
+      }
+    }
+    &--cancel{
+      background-color: #f1361a;
+      color: #fff;
+      &:hover{
+        background-color: #cc1c00;
+      }
+      &:active{
+        background-color: #d24430;
+      }
+    }
+  }
+}
+.crmForm-item__input-remove + .crmForm-item__added-role{
+  margin-top: 5px;
+}
+.ss-scroll{
+  width: 4px;
+  margin-left: -4px;
+  &:hover{
+    background-color: #2fc6f6;
+  }
+}
+

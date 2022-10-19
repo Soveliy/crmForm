@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Главная</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+ <div class="crmForm">
+    <div class="crmForm__row">
+       <div class="crmForm__item-container">
+        <div class="crmForm-item">
+            <div class="crmForm-item__head">
+                Роли
+            </div>
+            <div class="crmForm-item__body"  ss-container data-role-container>
+                <div class="crmForm-item__input-container" data-role>
+                    <input type="text" class="crmForm-item__input" placeholder="Введите название роли">
+                    <div class="crmForm-item__input-remove" data-remove-role title="Удалить роль">X</div>
+                    <div class="crmForm-item__added-role" data-add-employee title="Выберите сотрудника">
+                        +
+                    </div>
+                </div>
+               
+                <div class="crmForm-item__added-role" data-add-role title="Добавьте роль">
+                    +
+                </div>
+            </div>
+            <div class="crmForm-item__footer">
+                <button class="crmForm__button crmForm__button--save">
+                    Сохранить
+                </button>
+            </div>
+        </div>
+       </div>
+       <div class="crmForm__item-container">
+        <div class="crmForm-item">
+            <div class="crmForm-item__head">
+                Описание
+            </div>
+            <div class="crmForm-item__body" ss-container>
+                <div class="crmForm-item__input-container" data-textarea>
+                    <textarea class="crmForm-item__textarea" placeholder="Введите текст"></textarea>
+                </div>
+            </div>
+            <div class="crmForm-item__footer">
+                <button class="crmForm__button crmForm__button--cancel">
+                    Отменить
+                </button>
+            </div>
+
+        </div>
+       </div>
+    </div>
+ </div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  
+    
+</body>
+</html>
