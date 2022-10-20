@@ -1,11 +1,19 @@
 'use strict'
-const addButton = document.querySelector('[data-add-role]')
-const role =  document.querySelector('[data-role]')
-const roleContainer = document.querySelector('[data-role-container]')
-const roleContainers = document.querySelectorAll('.crmForm-item__body')
+const addButton = document.querySelector('[data-add-role]');
+const role =  document.querySelector('[data-role]');
+const roleContainer = document.querySelector('[data-role-container]');
+
+
 function createRole(){
-  let newRole = role.cloneNode(true)
-  addButton.before(newRole)
+  let newRole = document.createElement('div');
+  newRole.className = "crmForm-item__input-container";
+  newRole.dataset.role ='';
+  newRole.innerHTML = `<input type="text" class="crmForm-item__input" placeholder="Введите название роли">
+                    <div class="crmForm-item__input-remove" data-remove-role="" title="Удалить роль">X</div>
+                    <div class="crmForm-item__added-role" data-add-employee="" title="Выберите сотрудника">+</div>`;
+  addButton.before(newRole);
+  
+  
 }
 addButton.addEventListener('click', function (event) {
   createRole()
@@ -15,19 +23,21 @@ addButton.addEventListener('click', function (event) {
 roleContainer.onclick = function(event) {
   if (event.target.className != 'crmForm-item__input-remove') return;
     let roleItem = event.target.closest('[data-role]');
-    roleItem.remove();
+    let roleInput = event.target.previousElementSibling;
+    roleItem.classList.add("isHide");
+    roleInput.dataset.hidden = '';
 };
 
-let optionsButtons = document.querySelectorAll(".option-button");
-let advancedOptionButton = document.querySelectorAll(".adv-option-button");
+let optionsButtons = document.querySelectorAll(".options__button");
+let advancedOptionButton = document.querySelectorAll(".adv-options__button");
 let fontName = document.getElementById("fontName");
 let fontSizeRef = document.getElementById("fontSize");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("createLink");
-let alignButtons = document.querySelectorAll(".align");
-let spacingButtons = document.querySelectorAll(".spacing");
-let formatButtons = document.querySelectorAll(".format");
-let scriptButtons = document.querySelectorAll(".script");
+let alignButtons = document.querySelectorAll("[data-align]");
+let spacingButtons = document.querySelectorAll("[data-spacing]");
+let formatButtons = document.querySelectorAll("[data-format]");
+let scriptButtons = document.querySelectorAll("[data-script]");
 
 //List of fontlist
 let fontList = [
@@ -110,7 +120,7 @@ const highlighter = (className, needsRemoval) => {
         let alreadyActive = false;
 
         //If currently clicked button is already active
-        if (button.classList.contains("active")) {
+        if (button.classList.contains("isActive")) {
           alreadyActive = true;
         }
 
@@ -118,11 +128,11 @@ const highlighter = (className, needsRemoval) => {
         highlighterRemover(className);
         if (!alreadyActive) {
           //highlight clicked button
-          button.classList.add("active");
+          button.classList.add("isActive");
         }
       } else {
         //if other buttons can be highlighted
-        button.classList.toggle("active");
+        button.classList.toggle("isActive");
       }
     });
   });
@@ -130,7 +140,7 @@ const highlighter = (className, needsRemoval) => {
 
 const highlighterRemover = (className) => {
   className.forEach((button) => {
-    button.classList.remove("active");
+    button.classList.remove("isActive");
   });
 };
 
