@@ -1,5 +1,6 @@
 @import "vars";
 @import "libs";
+@import "../css/fontawesome.css";
 @import "fonts";
 $dark-pink:#0D1526;
 $inputs-color:#132039;
@@ -297,3 +298,6 @@ img{
   }
 }
 
+#text-input{
+  border: 1px solid black;
+}
