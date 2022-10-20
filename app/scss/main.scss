@@ -199,8 +199,8 @@ img{
       position: relative;
       overflow: hidden;
       &[data-add-employee]{
-        width: 37px;
-        height: 37px;
+        width: 35px;
+        height: 35px;
         &:hover{
           &:before{
             border-width: 20px;
@@ -296,7 +296,7 @@ img{
   }
 }
 .crmForm-item__input-remove + .crmForm-item__added-role{
-  margin-top: 5px;
+  margin-top: 8px;
 }
 .ss-scroll{
   width: 4px;
@@ -364,4 +364,35 @@ input[type="color"]::-moz-color-swatch {
 
 .isActive {
   background-color: #2fc6f6;
+}
+.user{
+  & + &{
+    margin-top: 16px;
+  }
+    position: relative;
+    margin-top: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &__avatar{
+      height: 35px;
+      width: 35px;
+      margin-right: 12px;
+      img{
+        border-radius: 50%;
+      }
+    }
+    &__name{
+      font-size: 13px;
+      line-height: 19px;
+    }
+    a.user__name{
+      color: #0b66c3;
+      text-decoration: none;
+    }
+    &__pos{
+      font-size: 13px;
+      color: #969ca5;
+    }
+    
 }
