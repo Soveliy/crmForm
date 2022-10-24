@@ -1,8 +1,9 @@
 'use strict'
+
 const addButton = document.querySelector('[data-add-role]');
 const role =  document.querySelector('[data-role]');
 const roleContainer = document.querySelector('[data-role-container]');
-
+const shadow =  document.querySelector('.shadow');
 
 function createRole(){
   let newRole = document.createElement('div');
@@ -21,13 +22,22 @@ addButton.addEventListener('click', function (event) {
 
 
 roleContainer.onclick = function(event) {
-  if (event.target.className != 'crmForm-item__input-remove') return;
+  if (event.target.className == 'crmForm-item__input-remove'){
     let roleItem = event.target.closest('[data-role]');
     let roleInput = event.target.previousElementSibling;
     roleItem.classList.add("isHide");
     roleInput.dataset.hidden = '';
-};
+  }
+  if (event.target.hasAttribute("data-add-employee")){
+    shadow.classList.add("js-active");
+  }
 
+  
+};
+shadow.onclick = function(event) {
+  shadow.classList.remove("js-active");
+
+};
 let optionsButtons = document.querySelectorAll(".options__button");
 let advancedOptionButton = document.querySelectorAll(".adv-options__button");
 let fontName = document.getElementById("fontName");
@@ -146,3 +156,8 @@ const highlighterRemover = (className) => {
 
 window.onload = initializer();
 
+window.onload = function () {
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 500);
+}
