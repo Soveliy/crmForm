@@ -398,160 +398,7 @@ input[type="color"]::-moz-color-swatch {
     }
     
 }
-svg.tea {
-  --secondary: #33406f;
-  }
-  svg.tea #teabag {
-  transform-origin: top center;
-  transform: rotate(3deg);
-  animation: swing 2s infinite;
-  }
-  svg.tea #steamL {
-  stroke-dasharray: 13;
-  stroke-dashoffset: 13;
-  animation: steamLarge 2s infinite;
-  }
-  svg.tea #steamR {
-  stroke-dasharray: 9;
-  stroke-dashoffset: 9;
-  animation: steamSmall 2s infinite;
-  }
-  @-moz-keyframes swing {
-  50% {
-      transform: rotate(-3deg);
-  }
-  }
-  @-webkit-keyframes swing {
-  50% {
-      transform: rotate(-3deg);
-  }
-  }
-  @-o-keyframes swing {
-  50% {
-      transform: rotate(-3deg);
-  }
-  }
-  @keyframes swing {
-  50% {
-      transform: rotate(-3deg);
-  }
-  }
-  @-moz-keyframes steamLarge {
-  0% {
-      stroke-dashoffset: 13;
-      opacity: 0.6;
-  }
-  100% {
-      stroke-dashoffset: 39;
-      opacity: 0;
-  }
-  }
-  @-webkit-keyframes steamLarge {
-  0% {
-      stroke-dashoffset: 13;
-      opacity: 0.6;
-  }
-  100% {
-      stroke-dashoffset: 39;
-      opacity: 0;
-  }
-  }
-  @-o-keyframes steamLarge {
-  0% {
-      stroke-dashoffset: 13;
-      opacity: 0.6;
-  }
-  100% {
-      stroke-dashoffset: 39;
-      opacity: 0;
-  }
-  }
-  @keyframes steamLarge {
-  0% {
-      stroke-dashoffset: 13;
-      opacity: 0.6;
-  }
-  100% {
-      stroke-dashoffset: 39;
-      opacity: 0;
-  }
-  }
-  @-moz-keyframes steamSmall {
-  10% {
-      stroke-dashoffset: 9;
-      opacity: 0.6;
-  }
-  80% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  100% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  }
-  @-webkit-keyframes steamSmall {
-  10% {
-      stroke-dashoffset: 9;
-      opacity: 0.6;
-  }
-  80% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  100% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  }
-  @-o-keyframes steamSmall {
-  10% {
-      stroke-dashoffset: 9;
-      opacity: 0.6;
-  }
-  80% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  100% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  }
-  @keyframes steamSmall {
-  10% {
-      stroke-dashoffset: 9;
-      opacity: 0.6;
-  }
-  80% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  100% {
-      stroke-dashoffset: 27;
-      opacity: 0;
-  }
-  }
-.preloader{
-  position: fixed;
 
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-  transition: .3s;
-  &:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .1);
-  }
-}
 body.loaded{
   .preloader{
     opacity: 0;
@@ -578,4 +425,55 @@ body.loaded{
     visibility: visible;
     cursor: pointer;
   }
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+.preloader{
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: .3s;
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .1);
+  }
+  &__icon{
+    height: 50px;
+    width: 50px;
+    animation:spin 1s linear infinite;
+  }
+}
+
+.crmForm-item__added-role-container{
+  position: relative;
+  
+}
+.crmForm-item__added-role-container:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: #2fc6f6;
+}
+.crmForm-item__added-role{
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
 }

@@ -12,7 +12,7 @@ function createRole(){
   newRole.innerHTML = `<input type="text" class="crmForm-item__input" placeholder="Введите название роли">
                     <div class="crmForm-item__input-remove" data-remove-role="" title="Удалить роль">X</div>
                     <div class="crmForm-item__added-role" data-add-employee="" title="Выберите сотрудника">+</div>`;
-  addButton.before(newRole);
+  addButton.parentElement.before(newRole);
   
   
 }
